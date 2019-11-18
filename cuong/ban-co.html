@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        table {
+            border: 1px solid;
+        }
+
+        td {
+            width: 50px;
+            height: 50px;
+            border: 1px solid;
+            text-align: center;
+            background: white;
+        }
+
+        tr {
+            width: 50px;
+            height: 50px;
+        }
+    </style>
+</head>
+
+<body>
+    <h3>Tic tac toe</h3>
+
+    <script>
+        status = "x";
+        function drawBoard(N) {
+            let sout = "<table>";
+            for (let i = 0; i < N; i++) {
+                sout += "<tr>";
+                for (let j = 0; j < N; j++) {
+                    sout += "<td id='id" + i + j + "' onclick='displayXO(this.id," + i + "" + j + ");'></td>";
+                }
+                sout += "</tr>";
+            }
+            sout += "</table>";
+            document.write(sout);
+        }
+        function displayXO(idOfCell, i, j) {
+            if (document.getElementById(idOfCell).innerHTML == "")
+                document.getElementById(idOfCell).innerHTML = status;
+            if (status == "x") {
+                status = "o";
+            } else {
+                status = "x";
+            }
+            checkWin(i, j);
+        }
+        function getValue(i,j) {
+            let cell = document.getElementById("cell-" + i + "-" + j);
+            return cell.textContent;
+        }
+        function CheckWinCols(i,j,N){
+            let count = 1;
+            let x = 0;
+            while(i+x<N && getValue(i+x)==getValue(j+x)){
+                count++;
+                x++;
+            }
+        }
+        function checkWin(i, j) {
+            let countX = CheckWinCols(i,j);
+        }
+        drawBoard(10);
+    </script>
+
+
+</body>
+
+</html>

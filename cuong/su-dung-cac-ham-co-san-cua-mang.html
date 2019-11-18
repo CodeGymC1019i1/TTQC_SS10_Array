@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+        <input type="text" id="text">
+        <input type="button" value="Chuyển đổi" onclick="chuyendoi();">
+        <p id="show"></p>
+    <script>
+        function show() {
+            let myColor = ["Red", "Green", "White", "Black"];
+            document.write(myColor.toString());
+        }
+        function number() {
+            const num = window.prompt();
+            const str = num.toString();
+            const result = [str[0]];
+
+            for (let x = 1; x < str.length; x++) {
+                if ((str[x - 1] % 2 === 0) && (str[x] % 2 === 0)) {
+                   result.push('-', str[x]);
+                }
+                else {
+                    result.push(str[x]);
+                }
+            }
+            document.write(result.join(''));
+        }
+        function chuyendoi(){
+    let srt = document.getElementById("text").value;
+    let UPPER = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    let LOWER = 'abcdefghijklmnopqrstuvwxyz';
+    let result = [];
+    for(x=0;x<srt.length;x++){
+        if(UPPER.indexOf(srt[x]) !== -1){
+            result.push(srt[x].toLowerCase());
+        } else if(LOWER.indexOf(srt[x]) !== -1){
+            result.push(srt[x].toUpperCase());
+        } else{
+            result.push(srt[x]);
+        }
+    }
+    document.getElementById("show").innerHTML = result.join(" ");
+}
+        function main() {
+            show();
+            document.write("<br/>")
+            number();
+            chuyendoi();
+        }
+        main();
+    </script>
+</body>
+
+</html>

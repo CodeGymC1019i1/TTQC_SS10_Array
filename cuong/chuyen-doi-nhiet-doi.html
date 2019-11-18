@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    p{
+        font-size:large;
+        
+    }
+    </style>
+</head>
+<body>
+   <h1>Temprerature Converter</h1> 
+   <p>
+   Type a value in the Fahrenheit field to  convert the value to Celcius:<br/>
+   Fahrenheit <input id="nputFahrenheit" type="number" placeholder="Fahrenheit" oninput="tinhToan(this.value)"
+   onchange="tinhToan(this.value)"><br/>
+   Celcius: <span id="outputCelsius"></span>
+   <script>
+   function tinhToan(F){
+       valNum = parseFloat(F);
+       document.getElementById("outputCelsius").innerHTML = (F-32)/1.8;
+   }
+   </script>
+</p>
+</body>
+</html>

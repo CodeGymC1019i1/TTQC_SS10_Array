@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    Feet: <input type="text" id="feet1" name="number">
+    Meters: <input type="text" id="meters1" name="number">
+    <input type="button" value="Chuyển đổi" onclick="chuyenDoi();">
+    <br/>
+    <span id="show"></span>
+    <script>
+        function chuyenDoi(){
+        let feet1 = document.getElementById("feet1").value;
+        let meters1 = document.getElementById("meters1").value;
+
+       let meters = 0.305*feet1;
+       let feet = 3.279*meters1;
+        document.getElementById("show").innerText = "Metest: " + meters +"  Feet: " + feet ;
+    }
+    </script>
+</body>
+</html>
